@@ -1,11 +1,20 @@
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
+import ProductCategory from './ProductCategory'
+
 
 
 const Home = () => {
     return (
         <div className="py-5">
-            <ImageCarousel />
+            <div>
+
+                <ImageCarousel />
+            </div>
+            <div>
+
+                <ProductCategory />
+            </div>
         </div>
     )
 }
