@@ -23,19 +23,19 @@ const ProductList = () => {
         <div className='flex flex-wrap justify-center py-5'>
             {
                 allProducts?.map(p => (
-                    <div className='m-1'>
+                    <div className='m-2'>
                         <Card style={{ width: '20rem', height: '24rem' }}>
                             <Card.Img variant="top" className='w-50 h-50 mx-auto' src={p.image} />
                             <Card.Body className='mx-auto'>
                                 <Card.Title>{p.title}</Card.Title>
-                                <div className='flex flex-wrap justify-between my-2'>
+                                <div className='flex flex-wrap justify-between my-5'>
                                     <div>
 
-                                        <span className='bg-yellow-700 p-1 text text-yellow-100 rounded-xl'>{p.price} €</span>
+                                        <span className='p-1  rounded-xl'>{p.price} €</span>
                                     </div>
                                     <div>
 
-                                        <button className="text-xl"><MdOutlineAddShoppingCart /></button>
+                                        <button className="text-3xl text-green-300"><MdOutlineAddShoppingCart /></button>
                                     </div>
                                 </div>
                             </Card.Body>
