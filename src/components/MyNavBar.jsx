@@ -12,13 +12,13 @@ const MyNavBar = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-
+                        <Nav.Link href="/products">Products</Nav.Link>
                         <NavDropdown title="Menu" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Men</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Women</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Children</NavDropdown.Item>
+                            <NavDropdown.Item href="/men">Men</NavDropdown.Item>
+                            <NavDropdown.Item href="/women">Women</NavDropdown.Item>
+                            <NavDropdown.Item href="/children">Children</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Accessory</NavDropdown.Item>
+                            <NavDropdown.Item href="/electronics">Electronics</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
@@ -26,8 +26,8 @@ const MyNavBar = () => {
 
                     </Nav>
                     <Nav className="mx-5">
-                        <Nav.Link href="#deets">User</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link href="/profile">User</Nav.Link>
+                        <Nav.Link eventKey={2} href="/cart">
                             Cart (0)
                         </Nav.Link>
                     </Nav>
