@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="flex flex-wrap justify-evenly py-3 text-gray-300 bg-yellow-800">
+        <div className="flex flex-wrap justify-evenly py-3 text-gray-300 bg-yellow-800 fixed-bottom">
             <div className="border-l border-r border-gray-400">
                 <span className='mx-4'>Imprint</span>
             </div>

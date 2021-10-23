@@ -1,23 +1,27 @@
 import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchAllProducts } from '../redux/actions'
+import ProductList from './ProductList'
+import { Container, Row, Col } from 'react-bootstrap'
+
+
 
 const Products = () => {
 
-    const dispatch = useDispatch()
-    const allProducts = useSelector(state => state.products.all_products)
-
-    console.log(allProducts)
-
-    useEffect(() => {
-        dispatch(fetchAllProducts())
-    }, [])
-
 
     return (
-        <div>
+        <Container fluid>
+            <Row>
+                <Col md={2}>
 
-        </div>
+                    <div className='fixed top-20 border py-5'><h3>Filter</h3>  </div>
+                </Col>
+                <Col md={10}>
+                    <div className=''><ProductList /> </div>
+
+                </Col>
+            </Row>
+        </Container>
+
+
     )
 }
 

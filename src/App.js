@@ -7,13 +7,12 @@ import Products from './components/Products';
 
 function App() {
   return (
-    <div className="bg-yellow-300 h-screen w-screen">
+    <div className=" h-100 w-100">
       <Router>
         <MyNavBar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/products" exact component={Products} />
-
         </Switch>
         <Footer />
       </Router>
