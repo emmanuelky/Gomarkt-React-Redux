@@ -8,5 +8,8 @@ export const productsReducer = (state = initialState.products, action) => {
                 ...state,
                 all_products: action.payload,
             }
+
+        default:
+            return state
     }
 }

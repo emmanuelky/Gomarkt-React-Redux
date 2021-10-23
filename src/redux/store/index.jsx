@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import { encryptTransform } from 'redux-persist-transform-encrypt'
 import storage from 'redux-persist/lib/storage'
-import { productsReducer } from '../reducers/productsReducer'
+import { productsReducer } from '../reducers/productReducer'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -12,6 +12,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 export const initialState = {
     products: {
         all_products: [],
+        loading: null,
     }
 
 }
