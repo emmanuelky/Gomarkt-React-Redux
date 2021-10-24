@@ -10,8 +10,10 @@ const ProductList = () => {
 
     const dispatch = useDispatch()
     const allProducts = useSelector(state => state.products.all_products)
+    const filteredProducts = useSelector(state => state.products.filtered_products)
+    // filteredProducts
 
-    // console.log(allProducts)
+    console.log(filteredProducts)
 
     useEffect(() => {
         dispatch(fetchAllProducts())

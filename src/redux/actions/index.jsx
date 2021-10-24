@@ -36,7 +36,7 @@ export const fetchAllProducts = (product_category) => {
     }
 }
 
-export const filterProductByPrice = (desc, asc) => {
+export const filterProductByPriceDesc = (desc) => {
     return async (dispatch) => {
         try {
 
@@ -45,13 +45,48 @@ export const filterProductByPrice = (desc, asc) => {
                 payload: true
             })
 
-            const productData = await axios.get(desc ? `https://fakestoreapi.com/products?sort=${desc}` : `https://fakestoreapi.com/products?sort=${asc}`)
-
-            if (productData) {
+            const filteredProductsPrice = await axios.get(`https://fakestoreapi.com/products?sort=${desc}`)
+            console.log(filteredProductsPrice)
+            if (filteredProductsPrice) {
 
                 dispatch({
                     type: typesConstant.FILTER_BY_PRICE,
-                    payload: productData.data
+                    payload: filteredProductsPrice.data.sort((a, b) => b.price - a.price)
+                })
+
+
+                dispatch({
+                    type: typesConstant.LOADING_PRODUCT,
+                    payload: false
+                })
+            }
+        } catch (e) {
+            console.error(e)
+        }
+    }
+}
+
+
+
+
+
+
+export const filterProductByPriceAsc = (asc) => {
+    return async (dispatch) => {
+        try {
+
+            dispatch({
+                type: typesConstant.LOADING_PRODUCT,
+                payload: true
+            })
+
+            const filteredProductsPrice = await axios.get(`https://fakestoreapi.com/products?sort=${asc}`)
+            console.log(filteredProductsPrice)
+            if (filteredProductsPrice) {
+
+                dispatch({
+                    type: typesConstant.FILTER_BY_PRICE,
+                    payload: filteredProductsPrice.data.sort((a, b) => a.price - b.price)
                 })
 
 

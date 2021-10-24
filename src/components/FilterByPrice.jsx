@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { filterProductByPrice } from '../redux/actions'
+import { filterProductByPriceDesc, filterProductByPriceAsc } from '../redux/actions'
 
 
 
@@ -16,19 +16,17 @@ const FilterByPrice = () => {
 
     }, [])
 
+    const handlePriceDescending = (desc) => {
+
+        return dispatch(filterProductByPriceDesc(desc))
+
+    }
+
     const handlePriceAscending = (asc) => {
 
-        return dispatch(filterProductByPrice(asc))
+        return dispatch(filterProductByPriceAsc(asc))
 
     }
-
-    const handlePriceDecending = (desc) => {
-
-        return dispatch(filterProductByPrice(desc))
-
-
-    }
-
 
 
     return (
@@ -36,9 +34,9 @@ const FilterByPrice = () => {
             <h4 className='underline text-center'>Filter</h4>
             <div className='flex flex-col'>
 
-                <button className='bg-yellow-600 rounded-full my-3 text-gray-200 p-1' onClick={() => handlePriceAscending('desc')}>price dsc</button>
+                <button className='bg-yellow-600 rounded-full my-3 text-gray-200 p-1' onClick={() => handlePriceAscending('asc')}>price asc</button>
+                <button className='bg-yellow-600 rounded-full my-3 text-gray-200 p-1' onClick={() => handlePriceDescending('desc')}>price desc</button>
 
-                <button className='bg-yellow-600 rounded-full my-3 text-gray-200 p-1' onClick={() => handlePriceDecending('asc')}>price asc</button>
             </div>
 
         </div>
