@@ -68,9 +68,6 @@ export const filterProductByPriceDesc = (desc) => {
 
 
 
-
-
-
 export const filterProductByPriceAsc = (asc) => {
     return async (dispatch) => {
         try {
@@ -98,5 +95,14 @@ export const filterProductByPriceAsc = (asc) => {
         } catch (e) {
             console.error(e)
         }
+    }
+}
+
+export const addToCart = (product) => {
+    return (dispatch) => {
+        dispatch({
+            type: typesConstant.ADD_TO_CART,
+            payload: product
+        })
     }
 }

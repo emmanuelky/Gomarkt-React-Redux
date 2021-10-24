@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchAllProducts } from '../redux/actions'
+import { fetchAllProducts, addToCart } from '../redux/actions'
 import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
@@ -24,6 +24,10 @@ const ProductList = () => {
 
     }
 
+    const handleAddCartItems = (product) => {
+        dispatch(addToCart(product))
+    }
+
     return (
 
         <div className='flex flex-wrap justify-center py-5'>
@@ -39,7 +43,7 @@ const ProductList = () => {
 
                         <div className="flex justify-around align-baseline pt-0 pb-2">
                             <div>{p.price} €</div>
-                            <div className="text-3xl text-green-300 cursor-pointer"><MdOutlineAddShoppingCart /></div>
+                            <div onClick={() => handleAddCartItems(p)} className="text-3xl text-green-300 cursor-pointer"><MdOutlineAddShoppingCart /></div>
                         </div>
                     </Card>
                 ))

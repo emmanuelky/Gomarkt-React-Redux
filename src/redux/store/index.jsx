@@ -13,6 +13,7 @@ export const initialState = {
     products: {
         all_products: [],
         loading: null,
+        cart: [],
     }
 
 }

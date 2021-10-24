@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import ProductsPage from './components/ProductsPage';
 import ProductDetail from './components/ProductDetail';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/products" exact component={ProductsPage} />
+          <Route path="/cart" exact component={Cart} />
           <Route path="/products/:id" exact component={ProductDetail} />
         </Switch>
         <Footer />

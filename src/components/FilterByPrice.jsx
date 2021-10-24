@@ -6,8 +6,6 @@ import { filterProductByPriceDesc, filterProductByPriceAsc } from '../redux/acti
 
 const FilterByPrice = () => {
 
-
-    // const allProducts = useSelector(state => state.products.all_products)
     const dispatch = useDispatch()
 
 
