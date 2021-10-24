@@ -106,3 +106,12 @@ export const addToCart = (product) => {
         })
     }
 }
+
+export const removeFromCart = (id) => {
+    return (dispatch) => {
+        dispatch({
+            type: typesConstant.REMOVE_FROM_CART,
+            payload: id
+        })
+    }
+}

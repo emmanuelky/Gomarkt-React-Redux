@@ -3,19 +3,27 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
+import { addToCart } from '../redux/actions'
+import { useDispatch } from 'react-redux'
 
 
 const ProductDetail = () => {
 
     const allProducts = useSelector(state => state.products.all_products)
+    // console.log(allProducts)
 
-    console.log(allProducts)
+    const dispatch = useDispatch()
+
     const { id } = useParams()
 
 
     const singleProduct = allProducts.find(product => product.id === parseInt(id))
     console.log(singleProduct)
 
+
+    const handleAddCartItems = (p) => {
+        dispatch(addToCart(p))
+    }
 
     return (
         <div className='flex my-5 '>
@@ -41,7 +49,7 @@ const ProductDetail = () => {
                                     <hr />
                                     <div className='flex justify-between my-5'>
                                         <div className='text-gray-100 my-2 text-xl bg-yellow-800 p-2 rounded-lg'>{singleProduct.price}€</div>
-                                        <div className="text-5xl text-green-600 cursor-pointer"><MdOutlineAddShoppingCart /></div>
+                                        <div onClick={() => handleAddCartItems(singleProduct)} className="text-5xl text-green-600 cursor-pointer"><MdOutlineAddShoppingCart /></div>
                                     </div>
                                     <hr />
 

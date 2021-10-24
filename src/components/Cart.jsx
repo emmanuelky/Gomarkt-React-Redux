@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
 import { RiDeleteBin6Fill } from 'react-icons/ri'
-
+import { removeFromCart } from '../redux/actions'
 
 
 
@@ -14,6 +14,8 @@ const Cart = () => {
     const cartPrices = cartItems.map((product) => product.price)
     const cartTotal = cartPrices.reduce((current, product) => current + product, 0)
 
+    const dispatch = useDispatch()
+
     console.log(cartTotal.toFixed(2))
 
     // let count = 0
@@ -21,12 +23,16 @@ const Cart = () => {
 
     // })
 
+    const handleRemoveItemFromCart = (id) => {
+        dispatch(removeFromCart(id))
+    }
+
 
     return (
         <div className='my-5 py-5'>
             {
                 cartItems.map((product, i) => (
-                    <Container className='border-b-2 p-2'>
+                    <Container className='border-b-2 p-2 my-5 px-4'>
                         <Row className='align-items-center'>
 
                             <Col md={3}>
@@ -47,14 +53,14 @@ const Cart = () => {
                             </Col>
                             <Col md={1}>
 
-                                <div><button><RiDeleteBin6Fill /></button></div>
+                                <div onClick={() => handleRemoveItemFromCart(product.id)}><button className='text-red-600'><RiDeleteBin6Fill /></button></div>
                             </Col>
                         </Row>
 
                     </Container>
                 ))
             }
-            <div className='my-5'>
+            <div className='my-5 bg-yellow-200'>
                 <h3 className='text-center'>Total: {cartTotal.toLocaleString()}€</h3>
             </div>
             <hr />
