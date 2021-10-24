@@ -5,7 +5,7 @@ import logo from '../Data/images/GO-Markt-LOGO.png'
 
 const MyNavBar = () => {
     return (
-        <div className="mb-5">
+        <div className="mb-2">
             <Navbar collapseOnSelect expand="lg" className='my-5' className="bg-yellow-800 fixed-top" variant="dark">
                 <Container>
                     <Navbar.Brand href="/"><img className='w-50 h-50' src={logo} alt="" /></Navbar.Brand>

@@ -2,12 +2,12 @@ import React from 'react'
 
 const FilterByPrice = () => {
     return (
-        <div>
-            <h4>Filter by Price</h4>
+        <div className >
+            <h4 className='underline text-center'>Filter</h4>
             <div className='flex flex-col'>
 
-                <div>price dsc</div>
-                <div>price asc</div>
+                <button>price dsc</button>
+                <button>price asc</button>
             </div>
 
         </div>

@@ -2,12 +2,12 @@ import React from 'react'
 
 const FilterByCategory = () => {
     return (
-        <div className='flex flex-col'>
-            <h4>Category</h4>
-            <div>Men</div>
-            <div>Women</div>
-            <div>Jewelery</div>
-            <div>Electronics</div>
+        <div className='flex flex-col ' >
+            <h4 className='underline'>Category</h4>
+            <button>Men</button>
+            <button>Women</button>
+            <button>Jewelery</button>
+            <button>Electronics</button>
 
         </div>
     )

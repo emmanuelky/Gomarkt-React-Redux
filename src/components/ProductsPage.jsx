@@ -11,8 +11,8 @@ const ProductsPage = () => {
 
     return (
         <Container fluid>
-            <Row>
-                <Col md={1} className='mx-auto'>
+            <Row className='text-yellow-800'>
+                <Col md={2} className='flex justify-center mx-auto text-gray-800 bg-gray-50'>
 
                     <div className='flex flex-col fixed top-20 py-5 mx-auto'>
                         <div className='mb-4'>
@@ -24,8 +24,11 @@ const ProductsPage = () => {
                         </div>
                     </div>
                 </Col>
-                <Col md={11}>
-                    <ProductList />
+                <Col md={10}>
+                    <div className='my-5'>
+
+                        <ProductList />
+                    </div>
 
                 </Col>
             </Row>
