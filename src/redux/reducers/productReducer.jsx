@@ -9,6 +9,13 @@ export const productsReducer = (state = initialState.products, action) => {
                 all_products: action.payload,
             }
 
+        case typesConstant.FILTER_BY_PRICE:
+            return {
+                ...state,
+                all_products: action.payload,
+            }
+
+
         default:
             return state
     }

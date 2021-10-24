@@ -1,6 +1,16 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchAllProducts } from '../redux/actions'
+
 
 const ProductCategory = () => {
+
+    const allProducts = useSelector(state => state.products.all_products)
+    const dispatch = useDispatch()
+
+    const productsCategory = allProducts.filter(product => product.category === "men's clothing" || "women's clothing" || 'jewelery' || 'electronics')
+
+
     return (<div className="py-5">
         <div className='py-5'><h2 className="text-center">Product Category</h2></div>
         <div className='flex flex-wrap justify-evenly'>
