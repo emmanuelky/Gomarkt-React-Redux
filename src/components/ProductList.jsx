@@ -5,13 +5,14 @@ import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
+import Loading from './Loading'
 
 
 const ProductList = () => {
 
     const dispatch = useDispatch()
     const allProducts = useSelector(state => state.products.all_products)
-
+    const loading = useSelector(state => state.products.loading)
 
     useEffect(() => {
         dispatch(fetchAllProducts())
@@ -29,8 +30,9 @@ const ProductList = () => {
     return (
         <>
             <div className='flex flex-wrap justify-center py-5'>
-                {
-                    allProducts?.map(p => (
+                {loading
+                    ? <Loading />
+                    : allProducts?.map(p => (
                         <Card className='m-2 mt-5' style={{ width: '15rem' }}>
                             <Link to={`/products/${p.id}`}>
                                 <Card.Img variant="top" className='w-50 h-100 mx-auto align-top' src={p.image} />

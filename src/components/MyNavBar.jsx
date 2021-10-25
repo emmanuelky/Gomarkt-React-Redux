@@ -28,11 +28,11 @@ const MyNavBar = () => {
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/products">Shop</Nav.Link>
                             <NavDropdown title="Menu" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/men">Men</NavDropdown.Item>
-                                <NavDropdown.Item href="/women">Women</NavDropdown.Item>
-                                <NavDropdown.Item href="/children">Jewelery</NavDropdown.Item>
+                                <NavDropdown.Item href="/products">Men</NavDropdown.Item>
+                                <NavDropdown.Item href="/products">Women</NavDropdown.Item>
+                                <NavDropdown.Item href="/products">Jewelery</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/electronics">Electronics</NavDropdown.Item>
+                                <NavDropdown.Item href="/products">Electronics</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Nav>
@@ -43,7 +43,7 @@ const MyNavBar = () => {
 
                         </Nav>
                         <Nav className="mx-5">
-                            <Nav.Link href="/profile" className="mx-4 align-self-center text-2xl"> < RiMapPinUserLine /></Nav.Link>
+                            <Nav.Link href="/" className="mx-4 align-self-center text-2xl"> < RiMapPinUserLine /></Nav.Link>
                             <Nav.Link eventKey={2} href="/cart">
                                 <div className='flex'>
                                     <div className='text-4xl mx-1 text-yellow-300'>

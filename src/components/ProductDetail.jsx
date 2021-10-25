@@ -5,6 +5,10 @@ import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { addToCart } from '../redux/actions'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { BsArrowLeftSquare } from 'react-icons/bs'
+
+
 
 
 const ProductDetail = () => {
@@ -52,11 +56,18 @@ const ProductDetail = () => {
                                         <div onClick={() => handleAddCartItems(singleProduct)} className="text-5xl text-green-600 cursor-pointer"><MdOutlineAddShoppingCart /></div>
                                     </div>
                                     <hr />
+                                    <Link to='/products' className='no-underline '>
+                                        <div className='flex justify-center text-center'>
 
+                                            <button className='flex align-items-center' ><BsArrowLeftSquare className='mx-2' /> Back to shop</button>
+                                        </div>
+                                    </Link>
+                                    <hr />
                                 </div>
                             </Col>
                         </Row>
                     </Container>
+
                 </>
 
             }

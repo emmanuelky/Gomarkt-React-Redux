@@ -18,7 +18,7 @@ const Cart = () => {
 
     const dispatch = useDispatch()
 
-    console.log(cartTotal.toFixed(2))
+    // console.log(cartTotal.toFixed(2))
 
     // let count = 0
     // let quantity = cartItems.map((item, i) => {

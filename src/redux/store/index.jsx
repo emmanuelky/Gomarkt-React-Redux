@@ -12,7 +12,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 export const initialState = {
     products: {
         all_products: [],
-        loading: null,
+        loading: false,
         cart: [],
     }
 
