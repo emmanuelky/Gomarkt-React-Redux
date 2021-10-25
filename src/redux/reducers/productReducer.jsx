@@ -15,6 +15,12 @@ export const productsReducer = (state = initialState.products, action) => {
                 all_products: action.payload,
             }
 
+        case typesConstant.SEARCH_PRODUCT:
+            return {
+                ...state,
+                all_products: action.payload,
+            }
+
         case typesConstant.ADD_TO_CART:
             return {
                 ...state,

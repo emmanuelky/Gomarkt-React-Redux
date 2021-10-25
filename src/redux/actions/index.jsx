@@ -115,3 +115,13 @@ export const removeFromCart = (id) => {
         })
     }
 }
+
+
+export const searchProduct = (product) => {
+    return (dispatch) => {
+        dispatch({
+            type: typesConstant.SEARCH_PRODUCT,
+            payload: product
+        })
+    }
+}

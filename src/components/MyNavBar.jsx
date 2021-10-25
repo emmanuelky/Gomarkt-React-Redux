@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navbar, Container, Nav, NavDropdown, Badge } from 'react-bootstrap'
 import SearchBar from './SearchBar'
 import logo from '../Data/images/GO-Markt-LOGO.png'
-import { useSelector } from 'react-redux'
 import { FaOpencart } from 'react-icons/fa'
 import { RiMapPinUserLine } from 'react-icons/ri'
+import { fetchAllProducts } from '../redux/actions'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 
 const MyNavBar = () => {
 
     const cartItems = useSelector(state => state.products.cart)
+    const dispatch = useDispatch()
 
     console.log(cartItems)
+
+
     return (
         <div className="mb-2">
             <Navbar collapseOnSelect expand="lg" className='my-5' className="bg-yellow-800 fixed-top " variant="dark">
@@ -32,7 +36,10 @@ const MyNavBar = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets"><SearchBar /></Nav.Link>
+                            <Nav.Link>
+                                <SearchBar />
+
+                            </Nav.Link>
 
                         </Nav>
                         <Nav className="mx-5">

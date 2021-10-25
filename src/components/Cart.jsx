@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { removeFromCart } from '../redux/actions'
+import { Link } from 'react-router-dom'
+import { BsArrowLeftSquare } from 'react-icons/bs'
 
 
 
@@ -64,6 +66,12 @@ const Cart = () => {
                 <h3 className='text-center'>Total: {cartTotal.toLocaleString()}€</h3>
             </div>
             <hr />
+            <Link to='/products' className='no-underline '>
+                <div className='flex justify-center text-center'>
+
+                    <button className='flex align-items-center' ><BsArrowLeftSquare className='mx-2' /> Back to shop</button>
+                </div>
+            </Link>
         </div>
     )
 }
