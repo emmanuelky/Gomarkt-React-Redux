@@ -1,15 +1,8 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchAllProducts } from '../redux/actions'
 import { Link } from 'react-router-dom'
 
 
 const ProductCategory = () => {
-
-    const allProducts = useSelector(state => state.products.all_products)
-    const dispatch = useDispatch()
-
-    const productsCategory = allProducts.filter(product => product.category === "men's clothing" || "women's clothing" || 'jewelery' || 'electronics')
 
 
     return (<div className="py-5">

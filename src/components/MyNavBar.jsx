@@ -4,7 +4,6 @@ import SearchBar from './SearchBar'
 import logo from '../Data/images/GO-Markt-LOGO.png'
 import { FaOpencart } from 'react-icons/fa'
 import { RiMapPinUserLine } from 'react-icons/ri'
-import { fetchAllProducts } from '../redux/actions'
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -12,7 +11,6 @@ import { useSelector, useDispatch } from 'react-redux'
 const MyNavBar = () => {
 
     const cartItems = useSelector(state => state.products.cart)
-    const dispatch = useDispatch()
 
     console.log(cartItems)
 

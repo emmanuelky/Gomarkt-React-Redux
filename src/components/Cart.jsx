@@ -11,19 +11,13 @@ import { BsArrowLeftSquare } from 'react-icons/bs'
 const Cart = () => {
 
     const cartItems = useSelector(state => state.products.cart)
-    const cartProductId = cartItems.map((product) => product.id)
 
     const cartPrices = cartItems.map((product) => product.price)
     const cartTotal = cartPrices.reduce((current, product) => current + product, 0)
 
     const dispatch = useDispatch()
 
-    // console.log(cartTotal.toFixed(2))
 
-    // let count = 0
-    // let quantity = cartItems.map((item, i) => {
-
-    // })
 
     const handleRemoveItemFromCart = (id) => {
         dispatch(removeFromCart(id))

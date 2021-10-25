@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Card, Button, Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { addToCart } from '../redux/actions'
 import { useDispatch } from 'react-redux'
