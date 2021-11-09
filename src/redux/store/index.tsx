@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import { productsReducer } from '../reducers/productReducer'
 
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 
 // INITIAL STATE
 export const initialState = {
