@@ -51,7 +51,7 @@ export const filterProductByPriceDesc = (desc: string) => {
             if (filteredProductsPrice) {
 
                 dispatch({
-                    type: typesConstant.FILTER_BY_PRICE,
+                    type: typesConstant.FILTER_BY_PRICE_DSC,
                     payload: filteredProductsPrice
                 })
 
@@ -83,7 +83,7 @@ export const filterProductByPriceAsc = (asc: string) => {
             if (filteredProductsPrice) {
 
                 dispatch({
-                    type: typesConstant.FILTER_BY_PRICE,
+                    type: typesConstant.FILTER_BY_PRICE_ASC,
                     payload: filteredProductsPrice
                 })
 

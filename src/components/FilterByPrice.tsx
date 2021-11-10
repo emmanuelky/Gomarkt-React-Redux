@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { filterProductByPriceDesc, filterProductByPriceAsc } from '../redux/actions'
+import { AnyAction } from 'redux'
+import { ThunkDispatch } from 'redux-thunk';
+import { ReduxStore } from '../Interface/index';
 
+type AppDispatch = ThunkDispatch<ReduxStore, any, AnyAction>;
 
 
 const FilterByPrice = () => {
 
-    const dispatch = useDispatch()
-
-
-    useEffect(() => {
-
-
-    }, [])
+    const dispatch: AppDispatch = useDispatch();
 
     const handlePriceDescending = (desc: string) => {
 

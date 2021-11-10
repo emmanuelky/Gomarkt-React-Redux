@@ -11,10 +11,16 @@ export const productsReducer = (state = initialState.products, action: AnyAction
                 all_products: action.payload,
             }
 
-        case typesConstant.FILTER_BY_PRICE:
+        case typesConstant.FILTER_BY_PRICE_DSC:
             return {
                 ...state,
                 all_products: action.payload.data.sort((a: Product, b: Product) => b.price - a.price),
+            }
+
+        case typesConstant.FILTER_BY_PRICE_ASC:
+            return {
+                ...state,
+                all_products: action.payload.data.sort((a: Product, b: Product) => a.price - b.price),
             }
 
         case typesConstant.SEARCH_PRODUCT:

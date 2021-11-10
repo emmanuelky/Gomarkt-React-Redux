@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -28,9 +28,6 @@ const ProductDetail = () => {
 
 
     const singleProduct: any = allProducts.find(product => product.id === parseInt(id))
-
-
-
 
 
     console.log(singleProduct)

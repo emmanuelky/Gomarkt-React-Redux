@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ProductList from './ProductList'
 import { Container, Row, Col } from 'react-bootstrap'
 import FilterByCategory from './FilterByCategory'
