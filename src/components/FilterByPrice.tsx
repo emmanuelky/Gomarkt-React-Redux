@@ -14,13 +14,13 @@ const FilterByPrice = () => {
 
     }, [])
 
-    const handlePriceDescending = (desc) => {
+    const handlePriceDescending = (desc: string) => {
 
         return dispatch(filterProductByPriceDesc(desc))
 
     }
 
-    const handlePriceAscending = (asc) => {
+    const handlePriceAscending = (asc: string) => {
 
         return dispatch(filterProductByPriceAsc(asc))
 
@@ -28,7 +28,7 @@ const FilterByPrice = () => {
 
 
     return (
-        <div className >
+        <div className='' >
             <h4 className='underline text-center'>Filter</h4>
             <div className='flex flex-col'>
 

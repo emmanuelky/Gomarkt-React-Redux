@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -7,25 +7,36 @@ import { addToCart } from '../redux/actions'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { BsArrowLeftSquare } from 'react-icons/bs'
+import { ReduxStore, Product } from '../Interface/index';
 
 
 
 
 const ProductDetail = () => {
 
-    const allProducts = useSelector(state => state.products.all_products)
-    // console.log(allProducts)
+    const allProducts = useSelector<ReduxStore, Product[]>(state => state.products.all_products)
 
     const dispatch = useDispatch()
 
-    const { id } = useParams()
+    const { id }: any = useParams()
 
 
-    const singleProduct = allProducts.find(product => product.id === parseInt(id))
+
+    // const typeGuard = (singleProduct: Product | undefined): singleProduct is Product => {
+    //     return true
+    // }
+
+
+    const singleProduct: any = allProducts.find(product => product.id === parseInt(id))
+
+
+
+
+
     console.log(singleProduct)
 
 
-    const handleAddCartItems = (p) => {
+    const handleAddCartItems = (p: Product) => {
         dispatch(addToCart(p))
     }
 

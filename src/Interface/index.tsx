@@ -2,15 +2,16 @@
 export interface Rating {
     rate: number;
     count: number;
-    price: number;
 }
 
 export interface Product {
     id: number;
     image: string;
+    price: number;
     title: string;
     description: string;
     rating: Rating;
+    category: string
 
 
 }

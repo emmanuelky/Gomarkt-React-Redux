@@ -5,19 +5,20 @@ import logo from '../Data/images/GO-Markt-LOGO.png'
 import { FaOpencart } from 'react-icons/fa'
 import { RiMapPinUserLine } from 'react-icons/ri'
 import { useSelector, useDispatch } from 'react-redux'
+import { ReduxStore, Product } from '../Interface/index';
 
 
 
 const MyNavBar = () => {
 
-    const cartItems = useSelector(state => state.products.cart)
+    const cartItems = useSelector<ReduxStore, Product[]>(state => state.products.cart)
 
     console.log(cartItems)
 
 
     return (
         <div className="mb-2">
-            <Navbar collapseOnSelect expand="lg" className='my-5' className="bg-yellow-800 fixed-top " variant="dark">
+            <Navbar collapseOnSelect expand="lg" className="bg-yellow-800 fixed-top mb-5 " variant="dark">
                 <Container>
                     <Navbar.Brand href="/"><img className='w-50 h-50' src={logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

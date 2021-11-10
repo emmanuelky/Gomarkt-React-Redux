@@ -1,7 +1,7 @@
 import { initialState } from '../store'
 import typesConstant from '../actions/types'
 import { AnyAction } from 'redux'
-import { Rating } from '../../Interface'
+import { Product } from '../../Interface/index';
 
 export const productsReducer = (state = initialState.products, action: AnyAction) => {
     switch (action.type) {
@@ -14,7 +14,7 @@ export const productsReducer = (state = initialState.products, action: AnyAction
         case typesConstant.FILTER_BY_PRICE:
             return {
                 ...state,
-                all_products: action.payload.data.sort((a: Rating, b: Rating) => b.price - a.price),
+                all_products: action.payload.data.sort((a: Product, b: Product) => b.price - a.price),
             }
 
         case typesConstant.SEARCH_PRODUCT:
