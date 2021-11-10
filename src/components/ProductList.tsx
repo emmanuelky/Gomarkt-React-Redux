@@ -6,24 +6,29 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import Loading from './Loading'
+import { ReduxStore, Product } from '../Interface/index';
+import { AnyAction } from 'redux'
+import { ThunkDispatch } from 'redux-thunk';
+
+type AppDispatch = ThunkDispatch<ReduxStore, any, AnyAction>;
 
 
 const ProductList = () => {
 
-    const dispatch = useDispatch()
-    const allProducts = useSelector(state => state.products.all_products)
-    const loading = useSelector(state => state.products.loading)
+    const dispatch: AppDispatch = useDispatch();
+    const allProducts = useSelector<ReduxStore, Product[]>(state => state.products.all_products)
+    const loading = useSelector<ReduxStore, boolean>(state => state.products.loading)
 
     useEffect(() => {
-        dispatch(fetchAllProducts())
+        dispatch(fetchAllProducts(''))
     }, [])
 
-    const shortTitle = (title) => {
+    const shortTitle = (title: string) => {
         return title.length > 21 ? title.slice(0, 21) : title.slice(0, 12)
 
     }
 
-    const handleAddCartItems = (product) => {
+    const handleAddCartItems = (product: Product) => {
         dispatch(addToCart(product))
     }
 

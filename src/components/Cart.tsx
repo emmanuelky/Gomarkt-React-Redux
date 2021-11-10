@@ -5,12 +5,13 @@ import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { removeFromCart } from '../redux/actions'
 import { Link } from 'react-router-dom'
 import { BsArrowLeftSquare } from 'react-icons/bs'
+import { Product, ReduxStore } from '../Interface/index';
 
 
 
 const Cart = () => {
 
-    const cartItems = useSelector(state => state.products.cart)
+    const cartItems = useSelector<ReduxStore, Product[]>(state => state.products.cart)
 
     const cartPrices = cartItems.map((product) => product.price)
     const cartTotal = cartPrices.reduce((current, product) => current + product, 0)
@@ -19,7 +20,7 @@ const Cart = () => {
 
 
 
-    const handleRemoveItemFromCart = (id) => {
+    const handleRemoveItemFromCart = (id: number) => {
         dispatch(removeFromCart(id))
     }
 

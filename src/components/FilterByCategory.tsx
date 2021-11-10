@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchAllProducts } from '../redux/actions'
+import { ReduxStore, Product } from '../Interface/index';
+import { AnyAction } from 'redux'
+import { ThunkDispatch } from 'redux-thunk';
+
+type AppDispatch = ThunkDispatch<ReduxStore, any, AnyAction>;
 
 const FilterByCategory = () => {
 
     const [selected, setSelected] = useState(false)
 
-    const allProducts = useSelector(state => state.products.all_products)
-    const dispatch = useDispatch()
+    const allProducts = useSelector<ReduxStore, Product[]>(state => state.products.all_products)
+    const dispatch: AppDispatch = useDispatch();
 
 
     useEffect(() => {
@@ -17,7 +22,7 @@ const FilterByCategory = () => {
 
     const categories = ["men's clothing", "women's clothing", "jewelery", "electronics"]
 
-    const handleFetchAllProducts = (category, index) => {
+    const handleFetchAllProducts = (category: string) => {
 
         if (allProducts.filter(p => p.category === category)) {
 
@@ -29,7 +34,7 @@ const FilterByCategory = () => {
     }
 
     const handleShowAllProducts = () => {
-        dispatch(fetchAllProducts())
+        dispatch(fetchAllProducts(''))
         setSelected(false)
     }
 
@@ -44,7 +49,7 @@ const FilterByCategory = () => {
                     <>
                         {
 
-                            <button className={'hover:bg-yellow-500 p-2 hover:rounded-full mx-auto'} onClick={() => handleFetchAllProducts(category, i)}>{category}</button>
+                            <button className={'hover:bg-yellow-500 p-2 hover:rounded-full mx-auto'} onClick={() => handleFetchAllProducts(category)}>{category}</button>
 
                         }
                     </>))

@@ -1,10 +1,11 @@
 import axios from 'axios'
-import typesConstant from '../actions/types'
+import typesConstant from './types'
+import { Dispatch } from 'redux'
+import { Product } from '../../Interface'
 
 
-
-export const fetchAllProducts = (product_category) => {
-    return async (dispatch) => {
+export const fetchAllProducts = (product_category: string) => {
+    return async (dispatch: Dispatch) => {
         try {
 
             dispatch({
@@ -36,8 +37,8 @@ export const fetchAllProducts = (product_category) => {
     }
 }
 
-export const filterProductByPriceDesc = (desc) => {
-    return async (dispatch) => {
+export const filterProductByPriceDesc = (desc: string) => {
+    return async (dispatch: Dispatch) => {
         try {
 
             dispatch({
@@ -51,7 +52,7 @@ export const filterProductByPriceDesc = (desc) => {
 
                 dispatch({
                     type: typesConstant.FILTER_BY_PRICE,
-                    payload: filteredProductsPrice.data.sort((a, b) => b.price - a.price)
+                    payload: filteredProductsPrice
                 })
 
 
@@ -68,8 +69,8 @@ export const filterProductByPriceDesc = (desc) => {
 
 
 
-export const filterProductByPriceAsc = (asc) => {
-    return async (dispatch) => {
+export const filterProductByPriceAsc = (asc: string) => {
+    return async (dispatch: Dispatch) => {
         try {
 
             dispatch({
@@ -83,7 +84,7 @@ export const filterProductByPriceAsc = (asc) => {
 
                 dispatch({
                     type: typesConstant.FILTER_BY_PRICE,
-                    payload: filteredProductsPrice.data.sort((a, b) => a.price - b.price)
+                    payload: filteredProductsPrice
                 })
 
 
@@ -98,8 +99,8 @@ export const filterProductByPriceAsc = (asc) => {
     }
 }
 
-export const addToCart = (product) => {
-    return (dispatch) => {
+export const addToCart = (product: Product) => {
+    return (dispatch: Dispatch) => {
         dispatch({
             type: typesConstant.ADD_TO_CART,
             payload: product
@@ -107,8 +108,8 @@ export const addToCart = (product) => {
     }
 }
 
-export const removeFromCart = (id) => {
-    return (dispatch) => {
+export const removeFromCart = (id: number) => {
+    return (dispatch: Dispatch) => {
         dispatch({
             type: typesConstant.REMOVE_FROM_CART,
             payload: id
@@ -117,8 +118,8 @@ export const removeFromCart = (id) => {
 }
 
 
-export const searchProduct = (product) => {
-    return (dispatch) => {
+export const searchProduct = (product: Product) => {
+    return (dispatch: Dispatch) => {
         dispatch({
             type: typesConstant.SEARCH_PRODUCT,
             payload: product

@@ -4,12 +4,13 @@ import { persistStore, persistReducer } from 'redux-persist'
 import { encryptTransform } from 'redux-persist-transform-encrypt'
 import storage from 'redux-persist/lib/storage'
 import { productsReducer } from '../reducers/productReducer'
+import { ReduxStore } from '../../Interface'
 
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 
 // INITIAL STATE
-export const initialState = {
+export const initialState: ReduxStore = {
     products: {
         all_products: [],
         loading: false,
@@ -22,11 +23,11 @@ export const initialState = {
 const persistConfig = {
     key: 'root',
     storage,
-    transforms: [
-        encryptTransform({
-            secretKey: process.env.REACT_APP_ENCRYPT_KEY,
-        }),
-    ],
+    // transforms: [
+    //     encryptTransform({
+    //         secretKey: process.env.REACT_APP_ENCRYPT_KEY,
+    //     }),
+    // ],
 }
 
 //COMBINE ALL REDUCERS
