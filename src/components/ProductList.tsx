@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchAllProducts, addToCart } from '../redux/actions'
-import { Card } from 'react-bootstrap'
+import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar'
 import Loading from './Loading'
 import { ReduxStore, Product } from '../Interface/index';
 import { AnyAction } from 'redux'
