@@ -44,6 +44,8 @@ const persistAllReducers = persistReducer(
 
 export const store = createStore(persistAllReducers,
     initialState,
-    process.env.REACT_APP_DEVELOPMENT ? composeEnhancers(applyMiddleware(thunk)) : compose(applyMiddleware(thunk)))
+    composeEnhancers(applyMiddleware(thunk)))
+// process.env.REACT_APP_DEVELOPMENT ? composeEnhancers(applyMiddleware(thunk)) : compose(applyMiddleware(thunk)))
+
 
 export const persistor = persistStore(store)
